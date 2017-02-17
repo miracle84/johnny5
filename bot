@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+use Johnny5\Kernel\CommandManager;
+
+define('PROJECT_DIR', __DIR__);
+
+require_once PROJECT_DIR . '/src/Johnny5/Init.php';
+
+try {
+    $commandManager = new CommandManager($argv);
+    $commandManager->execute();
+} catch (Exception $e) {
+    echo $e->getMessage() . PHP_EOL;
+}
